@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:text=" JUN, 19 2924"
+                android:text=" JUN, 19 2024"
                 android:onClick="openDatePicker"/>
 
         </androidx.cardview.widget.CardView>
