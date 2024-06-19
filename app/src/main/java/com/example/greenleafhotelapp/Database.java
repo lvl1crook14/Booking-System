@@ -1,4 +1,4 @@
-package com.example.greenleafhotelapp.;
+package com.example.greenleafhotelapp;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
