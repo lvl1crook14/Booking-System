@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="19dp"
         android:fontFamily="@font/gelasio_semibold"
         android:text="Fill in to set your Room Booking:"
         android:textSize="16.3dp"/>
@@ -28,7 +28,28 @@
             android:layout_height="652dp"
             android:layout_centerInParent="true"
             app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"/>
+            app:cardElevation="4dp">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Choose Date and Time: "
+                android:fontFamily=""
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:text=""/>
+
+        </androidx.cardview.widget.CardView>
+
 
     </LinearLayout>
 </ScrollView>
