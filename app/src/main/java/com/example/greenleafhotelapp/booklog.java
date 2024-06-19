@@ -92,7 +92,7 @@ public class booklog extends AppCompatActivity {
         if (month == 12)
             return "DEC";
 
-        return "JAN";
+        return "JUN";
     }
 
 
