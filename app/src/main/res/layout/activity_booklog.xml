@@ -17,8 +17,8 @@
             android:id="@+id/book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
+            android:layout_gravity="center"
             android:fontFamily="@font/gelasio_semibold"
             android:text="Fill in to set your Room Booking:"
             android:textSize="16.3dp" />
