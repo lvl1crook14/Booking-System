@@ -13,7 +13,8 @@
         android:theme="@style/Theme.Greenleafhotelapp"
         tools:targetApi="31">
         <activity android:name=".ViewDataActivity" />
-        <activity android:name=".AdminLoginActivity"></activity>
+        <activity android:name=".AdminLoginActivity">
+        </activity>
        <activity android:name=".booklog">
        </activity>
         <activity
