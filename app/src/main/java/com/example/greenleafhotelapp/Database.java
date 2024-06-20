@@ -1,6 +1,7 @@
 package com.example.greenleafhotelapp;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -50,7 +51,6 @@ class Database extends SQLiteOpenHelper {
                     "room_id INTEGER NOT NULL, " +
                     "date_in DATE NOT NULL, " +
                     "date_out DATE NOT NULL, " +
-                    "payment_status VARCHAR(50) NOT NULL, " +
                     "FOREIGN KEY (guest_id) REFERENCES Guest(guest_id), " +
                     "FOREIGN KEY (room_id) REFERENCES Room(room_id))";
 
@@ -96,4 +96,19 @@ class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Hosted");
         onCreate(sqLiteDatabase);
     }
+
+    // Method to retrieve guest and reservation data
+    public Cursor getGuestReservationData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT Guest.guest_firstname, Guest.guest_lastname, Guest.guest_contact_number, Guest.guest_email, " +
+                "Reservation.date_in, Reservation.date_out " +
+                "FROM Guest " +
+                "INNER JOIN Reservation ON Guest.guest_id = Reservation.guest_id";
+        return db.rawQuery(query, null);
+    }
+    public Cursor getAllGuests() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM Guest", null);
+    }
+
 }
