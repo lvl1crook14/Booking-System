@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="Room1"
+                android:text="Deluxe Twin Room"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
@@ -67,9 +67,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="lorem ipsum"
+                android:text="Good For Two People, equipped with it's own Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="14dp" />
+                android:textSize="10dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
