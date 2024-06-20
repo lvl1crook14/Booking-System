@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,booklog.class);
+                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
                 startActivity(intent);
             }
         });
