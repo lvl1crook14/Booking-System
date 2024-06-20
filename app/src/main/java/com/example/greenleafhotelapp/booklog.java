@@ -62,7 +62,7 @@ public class booklog extends AppCompatActivity {
 
     private String makeDateString(int month, int day, int year)
     {
-        return getMonthFormat(month) + "" + day + "" + year;
+        return getMonthFormat(month) + "  " + day + "  " +   year;
     }
 
     private String getMonthFormat(int month)
@@ -92,7 +92,7 @@ public class booklog extends AppCompatActivity {
         if (month == 12)
             return "DEC";
 
-        return "JAN";
+        return "JUN";
     }
 
 
