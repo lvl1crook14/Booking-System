@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ViewDataActivity extends AppCompatActivity {
@@ -19,26 +20,29 @@ public class ViewDataActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_view);
         db = new Database(this);
 
-        loadData();
-    }
+        // Fetch guest and reservation data
+        Cursor cursor = db.getGuestReservationData();
 
-    private void loadData() {
-        Cursor cursor = db.getReadableDatabase().rawQuery("SELECT * FROM Guest", null);
-
+        // Display data using SimpleCursorAdapter
         String[] from = {
                 "guest_firstname",
                 "guest_lastname",
                 "guest_contact_number",
-                "guest_email"
+                "guest_email",
+                "date_in",
+                "date_out"
         };
         int[] to = {
-                R.id.tv_first_name,
-                R.id.tv_last_name,
-                R.id.tv_contact_number,
-                R.id.tv_email
+                android.R.id.text1,
+                android.R.id.text2,
+                android.R.id.text1,
+                android.R.id.text2,
+                android.R.id.text1,
+                android.R.id.text2
         };
 
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.activity_list_item, cursor, from, to, 0);
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+                this, android.R.layout.simple_list_item_2, cursor, from, to, 0);
         listView.setAdapter(adapter);
     }
 }
