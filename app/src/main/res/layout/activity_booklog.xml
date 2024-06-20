@@ -38,14 +38,14 @@
                 android:layout_marginTop="12dp"
                 android:fontFamily=""
                 android:text=" Choose Date and Time: "
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
             <Button
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="35dp"
                 android:onClick="openDatePicker"
                 android:text=" JUN, 19 2024" />
 
@@ -62,8 +62,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="25dp"
-                    android:text="ENTER YOUR NAME FULL NAME:"
-                    android:textSize="14dp"/>
+                    android:text="ENTER YOUR FULL NAME:"
+                    android:textSize="16dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -137,6 +137,15 @@
                     android:layout_marginTop="10dp" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="250dp"
+                android:fontFamily=""
+                android:text=" ENTER E-MAIL ADDRESS HERE: "
+                android:textSize="16dp" />
 
 
         </androidx.cardview.widget.CardView>
