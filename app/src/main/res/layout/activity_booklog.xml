@@ -10,6 +10,18 @@
     android:gravity="center">
 
     <!-- Guest Information -->
+
+
+    <TextView
+        android:id="@+id/hotel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/prociono"
+        android:text="GreenLeaf Hotel"
+        android:textSize="50dp" />
+
     <TextView
         android:id="@+id/tv_guest_info"
         android:layout_width="wrap_content"
