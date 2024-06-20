@@ -8,7 +8,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
     private Button btnAdminLogin, btnViewData, btn1, btn2, btn3, btn4, btn5, btn6;
 
     @Override
