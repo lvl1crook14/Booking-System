@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bs" />
+                android:src="@drawable/dtr" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,14 +106,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bs" />
+                android:src="@drawable/dkr" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="Room2"
+                android:text="Deluxe King Room"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
@@ -161,14 +161,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bs" />
+                android:src="@drawable/er" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="Room3"
+                android:text="Executive Room"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
@@ -216,14 +216,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bs" />
+                android:src="@drawable/obs" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="Room4"
+                android:text="One-Bedroom Suite"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
@@ -271,14 +271,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bs" />
+                android:src="@drawable/vs" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="Room5"
+                android:text="Veranda Suite"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
@@ -326,14 +326,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="121dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bs" />
+                android:src="@drawable/gs" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="Room6"
+                android:text="Garden Suite"
                 android:textColor="#808080"
                 android:textSize="20sp" />
 
