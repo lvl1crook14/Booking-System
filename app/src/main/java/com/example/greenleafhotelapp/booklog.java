@@ -1,7 +1,5 @@
 package com.example.greenleafhotelapp;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,43 +47,18 @@ public class booklog extends AppCompatActivity {
                     return;
                 }
 
-                // Insert guest data into database
-                SQLiteDatabase database = db.getWritableDatabase();
-                database.beginTransaction();
-                try {
-                    ContentValues guestValues = new ContentValues();
-                    guestValues.put("guest_firstname", firstName);
-                    guestValues.put("guest_lastname", lastName);
-                    guestValues.put("guest_contact_number", contactNumber);
-                    guestValues.put("guest_email", email);
-                    long guestId = database.insert("Guest", null, guestValues);
+                int roomId = getRoomId(roomType);  // Method to get room ID based on room type
+                if (roomId == -1) {
+                    Toast.makeText(booklog.this, "Invalid room type", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                    if (guestId == -1) {
-                        Toast.makeText(booklog.this, "Failed to insert guest data", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                long reservationId = db.addSimpleRoomReservation(firstName, lastName, Integer.parseInt(contactNumber), email, roomId, dateIn, dateOut);
 
-                    int roomId = getRoomId(roomType);  // Method to get room ID based on room type
-
-                    ContentValues reservationValues = new ContentValues();
-                    reservationValues.put("guest_id", guestId);
-                    reservationValues.put("room_id", roomId);
-                    reservationValues.put("date_in", dateIn);
-                    reservationValues.put("date_out", dateOut);
-                    long reservationId = database.insert("Reservation", null, reservationValues);
-
-                    if (reservationId == -1) {
-                        Toast.makeText(booklog.this, "Failed to insert reservation data", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    database.setTransactionSuccessful();
+                if (reservationId == -1) {
+                    Toast.makeText(booklog.this, "Failed to make reservation", Toast.LENGTH_SHORT).show();
+                } else {
                     Toast.makeText(booklog.this, "Reservation successful", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(booklog.this, "Error occurred during reservation", Toast.LENGTH_SHORT).show();
-                } finally {
-                    database.endTransaction();
                 }
             }
         });

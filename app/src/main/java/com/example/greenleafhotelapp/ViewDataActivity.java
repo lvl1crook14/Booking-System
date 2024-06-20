@@ -15,8 +15,8 @@ public class ViewDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_data);
 
-        ListView listView = findViewById(R.id.list_view); // Converted to local variable
-        Database db = new Database(this); // Converted to local variable
+        ListView listView = findViewById(R.id.list_view);
+        Database db = new Database(this);
 
         try {
             // Fetch guest and reservation data
@@ -40,7 +40,7 @@ public class ViewDataActivity extends AppCompatActivity {
                 Toast.makeText(this, "Failed to retrieve data", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Log.e("ViewDataActivity", "Error retrieving data: " + e.getMessage(), e);
+            Log.e("ViewDataActivity", "Error retrieving data", e);
             Toast.makeText(this, "Error retrieving data: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }

@@ -5,42 +5,38 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CursorAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-public class GuestReservationAdapter extends CursorAdapter {
+public class GuestReservationAdapter extends SimpleCursorAdapter {
 
-    public GuestReservationAdapter(Context context, Cursor cursor, int flags) {
-        super(context, cursor, flags);
+    public GuestReservationAdapter(Context context, Cursor c, int flags) {
+        super(context, R.layout.activity_list_item, c, new String[]{}, new int[]{}, flags);
     }
 
     @Override
-    public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        return inflater.inflate(R.layout.activity_list_item, parent, false);
-    }
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_view_data, parent, false);
+        }
 
-    @Override
-    public void bindView(View view, Context context, Cursor cursor) {
-        TextView tvFirstName = view.findViewById(R.id.tv_first_name);
-        TextView tvLastName = view.findViewById(R.id.tv_last_name);
-        TextView tvContactNumber = view.findViewById(R.id.tv_contact_number);
-        TextView tvEmail = view.findViewById(R.id.tv_email);
-        TextView tvDateIn = view.findViewById(R.id.tv_date_in);
-        TextView tvDateOut = view.findViewById(R.id.tv_date_out);
+        Cursor cursor = getCursor();
+        cursor.moveToPosition(position);
 
-        String firstName = cursor.getString(cursor.getColumnIndexOrThrow("guest_firstname"));
-        String lastName = cursor.getString(cursor.getColumnIndexOrThrow("guest_lastname"));
-        String contactNumber = cursor.getString(cursor.getColumnIndexOrThrow("guest_contact_number"));
-        String email = cursor.getString(cursor.getColumnIndexOrThrow("guest_email"));
-        String dateIn = cursor.getString(cursor.getColumnIndexOrThrow("date_in"));
-        String dateOut = cursor.getString(cursor.getColumnIndexOrThrow("date_out"));
+        TextView firstName = convertView.findViewById(R.id.tv_first_name);
+        TextView lastName = convertView.findViewById(R.id.tv_last_name);
+        TextView contactNumber = convertView.findViewById(R.id.tv_contact_number);
+        TextView email = convertView.findViewById(R.id.tv_email);
+        TextView dateIn = convertView.findViewById(R.id.tv_date_in);
+        TextView dateOut = convertView.findViewById(R.id.tv_date_out);
 
-        tvFirstName.setText(firstName);
-        tvLastName.setText(lastName);
-        tvContactNumber.setText(contactNumber);
-        tvEmail.setText(email);
-        tvDateIn.setText(dateIn);
-        tvDateOut.setText(dateOut);
+        firstName.setText(cursor.getString(cursor.getColumnIndexOrThrow("guest_firstname")));
+        lastName.setText(cursor.getString(cursor.getColumnIndexOrThrow("guest_lastname")));
+        contactNumber.setText(cursor.getString(cursor.getColumnIndexOrThrow("guest_contact_number")));
+        email.setText(cursor.getString(cursor.getColumnIndexOrThrow("guest_email")));
+        dateIn.setText(cursor.getString(cursor.getColumnIndexOrThrow("date_in")));
+        dateOut.setText(cursor.getString(cursor.getColumnIndexOrThrow("date_out")));
+
+        return convertView;
     }
 }

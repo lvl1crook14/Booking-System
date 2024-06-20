@@ -1,7 +1,6 @@
 package com.example.greenleafhotelapp;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +13,7 @@ public class AdminLoginActivity extends AppCompatActivity {
 
     private EditText etAdminUsername, etAdminPassword;
     private Button btnAdminLogin;
-    private Database db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +23,6 @@ public class AdminLoginActivity extends AppCompatActivity {
         etAdminUsername = findViewById(R.id.et_admin_username);
         etAdminPassword = findViewById(R.id.et_admin_password);
         btnAdminLogin = findViewById(R.id.btn_admin_login);
-
-        db = new Database(this);
 
         btnAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
