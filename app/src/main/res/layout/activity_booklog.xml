@@ -34,12 +34,11 @@
                 android:id="@+id/txtDateAndTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Choose Date and Time: "
-                android:fontFamily=""
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
-                android:textSize="14dp"
-                />
+                android:fontFamily=""
+                android:text=" Choose Date and Time: "
+                android:textSize="14dp" />
 
             <Button
                 android:id="@+id/date"
@@ -47,8 +46,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:text=" JUN, 19 2024"
-                android:onClick="openDatePicker"/>
+                android:onClick="openDatePicker"
+                android:text=" JUN, 19 2024" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp">
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="25dp"
+                    android:text="TextView" />
+
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
