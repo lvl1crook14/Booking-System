@@ -31,6 +31,9 @@ public class booklog extends AppCompatActivity {
 
         db = new Database(this);
 
+        // Get room type from Intent
+        String roomType = getIntent().getStringExtra("roomType");
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +65,7 @@ public class booklog extends AppCompatActivity {
                         return;
                     }
 
-                    // Assume room_id 1 for now; you can modify this to select a specific room
-                    int roomId = 1;
+                    int roomId = getRoomId(roomType);  // Method to get room ID based on room type
 
                     ContentValues reservationValues = new ContentValues();
                     reservationValues.put("guest_id", guestId);
@@ -87,5 +89,26 @@ public class booklog extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private int getRoomId(String roomType) {
+        // Implement logic to map room types to room IDs
+        // This could involve querying the database or using predefined values
+        switch (roomType) {
+            case "Deluxe Twin Room":
+                return 1;
+            case "Deluxe King Room":
+                return 2;
+            case "Executive Room":
+                return 3;
+            case "One-Bedroom Suite":
+                return 4;
+            case "Veranda Suite":
+                return 5;
+            case "Garden Suite":
+                return 6;
+            default:
+                return -1;  // Return -1 or handle appropriately if the room type is unknown
+        }
     }
 }
