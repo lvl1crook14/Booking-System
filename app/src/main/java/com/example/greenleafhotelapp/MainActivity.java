@@ -7,9 +7,6 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,67 +16,18 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Button button =(Button) findViewById(R.id.btn1);
-        Button button2 =(Button) findViewById(R.id.btn2);
-        Button button3 =(Button) findViewById(R.id.btn3);
-        Button button4 =(Button) findViewById(R.id.btn4);
-        Button button5 =(Button) findViewById(R.id.btn5);
-        Button button6 =(Button) findViewById(R.id.btn6);
+        // Set up buttons with click listeners
+        int[] buttonIds = {R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6};
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,UserInputActivity.class);
-                startActivity(intent);
-            }
-        });
+        for (int id : buttonIds) {
+            Button button = findViewById(id);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, booklog.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 }

@@ -1,103 +1,42 @@
 package com.example.greenleafhotelapp;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
+import android.widget.EditText;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.util.Calendar;
 
 public class booklog extends AppCompatActivity {
 
-    private DatePickerDialog datePickerDialog;
-    private Button datebutton;
+    private EditText editTextFirstName, editTextLastName, editTextContactNumber, editTextEmail, editTextDateIn, editTextDateOut;
+    private Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_booklog);
-        initDatePicker();
-        datebutton = findViewById(R.id.date);
-        datebutton.setText(getTodaysDate());
+
+        editTextFirstName = findViewById(R.id.et_first_name);
+        editTextLastName = findViewById(R.id.et_last_name);
+        editTextContactNumber = findViewById(R.id.et_contact_number);
+        editTextEmail = findViewById(R.id.et_email);
+        editTextDateIn = findViewById(R.id.et_date_in);
+        editTextDateOut = findViewById(R.id.et_date_out);
+        btnSubmit = findViewById(R.id.btn_submit);
+
+        // Handle date pickers
+        editTextDateIn.setOnClickListener(v -> showDatePickerDialog(editTextDateIn));
+        editTextDateOut.setOnClickListener(v -> showDatePickerDialog(editTextDateOut));
+
+        // Handle form submission
+        btnSubmit.setOnClickListener(v -> submitForm());
     }
 
-    private String getTodaysDate()
-    {
-        Calendar cal = Calendar.getInstance();
-        int year  = cal.get(Calendar.YEAR);
-        int month  = cal.get(Calendar.MONTH);
-        month = month + 1;
-        int day  = cal.get(Calendar.DAY_OF_MONTH);
-        return makeDateString(day,month, year);
+    private void showDatePickerDialog(EditText editText) {
+        // Implement date picker dialog
     }
 
-    private void initDatePicker()
-    {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int day) {
-
-                month = month + 1;
-                String date = makeDateString(month, day, year);
-                datebutton.setText(date);
-            }
-        };
-
-        Calendar cal = Calendar.getInstance();
-        int year  = cal.get(Calendar.YEAR);
-        int month  = cal.get(Calendar.MONTH);
-        int day  = cal.get(Calendar.DAY_OF_MONTH);
-
-        datePickerDialog = new DatePickerDialog(this, dateSetListener, year, month, day);
-    }
-
-    private String makeDateString(int month, int day, int year)
-    {
-        return getMonthFormat(month) + "  " + day + "  " +   year;
-    }
-
-    private String getMonthFormat(int month)
-    {
-        if (month == 1)
-            return "JAN";
-        if (month == 2)
-            return "FEB";
-        if (month == 3)
-            return "MAR";
-        if (month == 4)
-            return "APR";
-        if (month == 5)
-            return "MAY";
-        if (month == 6)
-            return "JUN";
-        if (month == 7)
-            return "JUL";
-        if (month == 8)
-            return "AUG";
-        if (month == 9)
-            return "SEP";
-        if (month == 10)
-            return "COT";
-        if (month == 11)
-            return "NOV";
-        if (month == 12)
-            return "DEC";
-
-        return "JUN";
-    }
-
-
-    public void openDatePicker(View view)
-    {
-        datePickerDialog.show();
+    private void submitForm() {
+        // Handle form submission
     }
 }
