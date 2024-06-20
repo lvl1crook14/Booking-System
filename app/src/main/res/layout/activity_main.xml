@@ -83,9 +83,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="Good For Two People, equipped with it's own Bath and Comfort Room."
+                android:text="Good For Two People, equipped with it's own  Twin Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="10dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,9 +138,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="lorem ipsum"
+                android:text="Good For Two People, 1 King Bed , with Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -193,9 +193,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="lorem ipsum"
+                android:text="Good For Two People, 1 Twin Bed , with Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -248,9 +248,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="lorem ipsum"
+                android:text="Good For Two People, 1 King Bed , with Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -303,9 +303,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="lorem ipsum"
+                android:text="Good For Two People, 1 King Bed , w/o Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -358,9 +358,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="lorem ipsum"
+                android:text="Good For Two People, 1 King Bed , with Bath and Comfort Room."
                 android:textColor="#808080"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
