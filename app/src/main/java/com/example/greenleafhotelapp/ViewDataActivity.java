@@ -2,47 +2,46 @@ package com.example.greenleafhotelapp;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ViewDataActivity extends AppCompatActivity {
-
-    private ListView listView;
-    private Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_data);
 
-        listView = findViewById(R.id.list_view);
-        db = new Database(this);
+        ListView listView = findViewById(R.id.list_view); // Converted to local variable
+        Database db = new Database(this); // Converted to local variable
 
-        // Fetch guest and reservation data
-        Cursor cursor = db.getGuestReservationData();
+        try {
+            // Fetch guest and reservation data
+            Cursor guestReservationCursor = db.getGuestReservationData();
+            Cursor allGuestsCursor = db.getAllGuests();
 
-        // Display data using SimpleCursorAdapter
-        String[] from = {
-                "guest_firstname",
-                "guest_lastname",
-                "guest_contact_number",
-                "guest_email",
-                "date_in",
-                "date_out"
-        };
-        int[] to = {
-                android.R.id.text1,
-                android.R.id.text2,
-                android.R.id.text1,
-                android.R.id.text2,
-                android.R.id.text1,
-                android.R.id.text2
-        };
+            if (guestReservationCursor != null && allGuestsCursor != null) {
+                Log.d("ViewDataActivity", "GuestReservationCursor count: " + guestReservationCursor.getCount());
+                Log.d("ViewDataActivity", "AllGuestsCursor count: " + allGuestsCursor.getCount());
 
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
-                this, android.R.layout.simple_list_item_2, cursor, from, to, 0);
-        listView.setAdapter(adapter);
+                if (guestReservationCursor.moveToFirst() && allGuestsCursor.moveToFirst()) {
+                    Log.d("ViewDataActivity", "GuestReservationCursor and AllGuestsCursor have data");
+                    GuestReservationAdapter adapter = new GuestReservationAdapter(this, guestReservationCursor, 0);
+                    listView.setAdapter(adapter);
+                } else {
+                    Log.d("ViewDataActivity", "GuestReservationCursor or AllGuestsCursor is empty");
+                    Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Log.d("ViewDataActivity", "GuestReservationCursor or AllGuestsCursor is null");
+                Toast.makeText(this, "Failed to retrieve data", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e("ViewDataActivity", "Error retrieving data: " + e.getMessage(), e);
+            Toast.makeText(this, "Error retrieving data: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 }

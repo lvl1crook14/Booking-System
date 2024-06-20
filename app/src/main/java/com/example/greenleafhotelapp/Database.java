@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -104,11 +105,15 @@ class Database extends SQLiteOpenHelper {
                 "Reservation.date_in, Reservation.date_out " +
                 "FROM Guest " +
                 "INNER JOIN Reservation ON Guest.guest_id = Reservation.guest_id";
-        return db.rawQuery(query, null);
-    }
-    public Cursor getAllGuests() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM Guest", null);
+        Cursor cursor = db.rawQuery(query, null);
+        Log.d("Database", "getGuestReservationData: cursor count = " + cursor.getCount());
+        return cursor;
     }
 
+    public Cursor getAllGuests() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Guest", null);
+        Log.d("Database", "getAllGuests: cursor count = " + cursor.getCount());
+        return cursor;
+    }
 }
