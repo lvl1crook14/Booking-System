@@ -16,13 +16,13 @@ public class UserInputActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookliog);
 
-        editTextFirstName = findViewById(R.id.editTextFirstName);
-        editTextLastName = findViewById(R.id.editTextLastName);
-        editTextContactNumber = findViewById(R.id.editTextContactNumber);
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextDateIn = findViewById(R.id.editTextDateIn);
-        editTextDateOut = findViewById(R.id.editTextDateOut);
-        btnSubmit = findViewById(R.id.btnSubmit);
+        editTextFirstName = findViewById(R.id.et_first_name);
+        editTextLastName = findViewById(R.id.et_last_name);
+        editTextContactNumber = findViewById(R.id.et_contact_number);
+        editTextEmail = findViewById(R.id.et_email);
+        editTextDateIn = findViewById(R.id.et_date_in);
+        editTextDateOut = findViewById(R.id.et_date_out);
+        btnSubmit = findViewById(R.id.btn_submit);
 
         // Handle date pickers
         editTextDateIn.setOnClickListener(v -> showDatePickerDialog(editTextDateIn));

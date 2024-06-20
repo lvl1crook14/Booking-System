@@ -99,9 +99,7 @@
         android:backgroundTintMode="src_in"
         android:padding="12dp"
         android:text="Submit Reservation"
-        android:textColor="@android:color/white"
         android:textColorLink="@color/medyo_green"
-        app:icon="@drawable/bg"
         app:iconTintMode="src_in" />
 
 </LinearLayout>
