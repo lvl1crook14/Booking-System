@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
         // Set up buttons with click listeners
@@ -29,5 +27,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
+        // Add button to view data
+        Button btnViewData = findViewById(R.id.btn_view_data);
+        btnViewData.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ViewDataActivity.class);
+            startActivity(intent);
+
+        });
+        Button btnAdminLogin = findViewById(R.id.btn_admin_login);
+        btnAdminLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AdminLoginActivity.class);
+            startActivity(intent);
+        });
     }
 }
