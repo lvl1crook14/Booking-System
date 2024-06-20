@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:name=".UserInputActivity"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/bg2"
     android:gravity="center">
 
     <!-- Guest Information -->
